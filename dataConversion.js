@@ -14,9 +14,8 @@ console.log(secondScore);
 console.log(typeof secondScore);
 
 let secondScoreValueInNumber=Number(secondScore);
-console.log(secondScoreValueInNumber);
-console.log(typeof secondScoreValueInNumber); // NaN
-
+console.log(secondScoreValueInNumber);//Nan
+console.log(typeof secondScoreValueInNumber); // Number
 
 
 // What if score is pure string
@@ -58,7 +57,7 @@ console.log(sixthScore)
 console.log(typeof sixthScore)
 
 let sixthScoreValueInNumber=Number(sixthScore);
-console.log(sixthScoreValueInNumber); // NsN yenar
+console.log(sixthScoreValueInNumber); // NaN yenar
 console.log(typeof sixthScoreValueInNumber);// number
 
 

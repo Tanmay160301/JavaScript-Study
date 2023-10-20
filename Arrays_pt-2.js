@@ -29,6 +29,7 @@ console.log(scoreArray);
 
 
 console.log(Array.isArray("Tanmay"));
+console.log(Array.isArray(school_friends));
 console.log(Array.from("Tanmay"));
-
-console.log(Array.from({name:"Tanmay"})) //specify karyala lagtay ki keys cha array banvaycha ahe ka values cha array banvaycha ahe 
+ 
+console.log(Array.from({name:"Tanmay"})) //specify karyala lagtay ki keys cha array banvaycha ahe ka values cha array banvaycha ahe

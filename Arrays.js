@@ -36,9 +36,9 @@ console.log(myarr.join());
 // slice or splice
 // While studying arrays also check ki kuthle properties original array varti kam kartat and kutle properties fkt copy varti kam kartat
 const arr1=[0,1,2,3,4,5,6];
-console.log(arr1.slice(2,5));
+console.log(arr1.slice(2,5));// shallow copy varti kam karne
 console.log(`The original array is ${arr1}`); //[0,1,2,3,4,5,6]
 
-console.log(arr1.splice(2,5));
+console.log(arr1.splice(2,5));// deep copy varti kam karne
 console.log(`The original array is ${arr1}`); //[0,1]
  

@@ -43,3 +43,8 @@ console.log(now.getDate());
 console.log(now.getFullYear());
 console.log(now.getMonth());
 
+// ability to display current timestamp using 2 approaches
+let date1=new Date();
+console.log(date1.getTime());
+
+console.log(Date.now());
