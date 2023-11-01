@@ -93,4 +93,6 @@ const properties=Object.entries(tinderUser);
 console.log(properties);
 
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'))
+console.log(tinderUser.hasOwnProperty('isLoggedIn')) 
+
+console.log(this);

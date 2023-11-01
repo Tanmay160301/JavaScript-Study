@@ -69,3 +69,4 @@ user.greetingTwo= function(){
 }
 console.log(user.greetingTwo());  
 
+console.log(this);

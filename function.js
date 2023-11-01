@@ -104,7 +104,7 @@ function returnThirdValue(anyArray){
 
 console.log(returnThirdValue(myArray));
 
-//Scopes types : global scope , block scope ,
+//Scopes types : global scope , block scope 
 //How var has problems with scope
 
 // function chya aat function: Closures cha intro
@@ -147,7 +147,7 @@ function addOne(num){
     return num + 1;
 }
 
-console.log(value(5));// Error Cannot access the variable before initialization
+//console.log(value(5));// Error Cannot access the variable before initialization
 
 const value= function(num){
     return num + 2;
@@ -160,3 +160,14 @@ const value= function(num){
  * kasa ek final tree banavla jata jithe sagle functions and variables thevle jatat 
  * 
  */
+
+
+//Hoisting chahc vishay
+x = 5;
+var x;
+
+// y = 5;
+// let y; Error: cannot access variblename before initialization
+
+// z = 5;
+// const z; Error: Syntx Error
