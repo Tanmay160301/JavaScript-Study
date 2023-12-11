@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //Its a best practice to use addEventListener() because it provides more functionality
+    //Interviews la mostly ashe events varche questions vicharle jatat
+    document.getElementById('owl').addEventListener('click',function(e){
+        // alert('Owl Clicked!!')
+        console.log(e.x);
+        console.log(e.y);
+        console.log("The time at which the user clicked is : " + e.timeStamp);
+        console.log(e);
+
+    },false)
+
+    // What to study in events
+    //type, timestamp , (x,y) parameters , preventDefault 
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+
+    //What is event propagation ... It is of 2 types Event bubbling and Event Capturing
+    //most of the industry projects are done with Event bubbling
+    document.getElementById("images").addEventListener("click", function(e){
+        console.log("Clicked inside the ul");
+    }, false)//due to false we are using event bubbling(Khalun vr).. Also its default value is false
+    //but if we set true then we are using event capturing(Varun Khali)... 
+
+
+    document.getElementById("owl").addEventListener("click", function(e){
+        console.log("Owl is Clicked");
+    }, false)//due to false we are using event bubbling.. Also its default value is false
+    //but if we set true then we are using event capturing(Varun Khali)...
+
+    
+    //Que asa ki jr me owl la click kela tr owl is clicked adi yenar ka clicked inside the ul print honar??
+    //bubble sarkha imagine karne ...pahila owl is click yenar and mg bubble sarkha event propagate 
+    //houn clicked inside the ul print honar
+
+    // Stopping the event propagation
+    //The event propagation could be stopped by e.stopPropagation()
+    document.getElementById("owl").addEventListener("click", function(e){
+        console.log("Owl is Clicked");
+        e.stopPropagation();
+    }, false)
+
+
+    //Now we will see how by using events we are going to prevent the default working/behaviour of any 
+    //element
+
+    document.getElementById("google").addEventListener("click",function(e){
+        console.log("Google is clicked");
+        e.stopPropagation();
+        e.preventDefault();//the default behaviour of that event is prevented
+
+    },false);
+
+</script>
+</html>

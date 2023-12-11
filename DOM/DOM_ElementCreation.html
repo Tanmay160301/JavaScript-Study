@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="background-color: black; color: azure;">
+    
+</body>
+<script>
+    // Basic expectation from DOM Element Creation
+    //Creating an HTML element using javascript and attaching it to document object
+    //Basic tags -> 1.document.createElement("div")
+    //              2. const text = document.createTextNode("this is text")
+    //              3. div.appendChild(text)
+    //              4. document.body.append(div)
+
+
+    //Firstly we wont be able to see it inside the document body object because it exists in the memory
+    // We will be able to access it once  we attach this newly created element to the document body 
+    //object
+    const div=document.createElement("div");
+    console.log(div);
+    div.className="thisClass"
+    div.id=Math.round(Math.random() * 10) + 1
+    div.setAttribute("title","titleName")
+    div.style.backgroundColor="green"
+    div.style.padding="10px"
+    //div.innerHTML = "My name is Tommy Shelby"//Another way of doing this is shown below
+
+    const thisText= document.createTextNode("My name is Tommy Shelby")
+    div.appendChild(thisText)
+
+    document.body.append(div)
+
+</script>
+</html>

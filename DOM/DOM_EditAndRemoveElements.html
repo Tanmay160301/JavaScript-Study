@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: azure;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    /**
+     * Basic expectation from Dom Edit and remove element
+     * creating a funct
+     * 2 ways of Appending the list item inside the ul element 
+     * one is brute force approach using innerHTML
+     * another one by using document.createTextNode() and appendChild()
+     * 
+     * basic familiarity of li: selector
+     * Choosing first li item using document.querySelector(li:first-child)
+     * Choosing 3rd li item using document.querySelector(li:nth-child(3))
+     * Choosing last li item using document.querySelector(li:last-child)
+     * 
+     * Basic understanding of editing and removing HTMLelement from document's body object
+     * A]   Editing Element
+     * element.replaceWith("anotherElement");
+     * 
+     * B]   Remove Element   
+     *  element = document.querySelector("li:nth-child(2)")
+     *  element.remove()
+    */
+
+    const list = document.querySelector(".language");
+    console.log(list);
+    let li = document.createElement("li");
+    li.innerText = "Python";
+    console.log(li);
+    list.appendChild(li);
+    console.log(list);
+
+    // Sirancha Approach (FirstHand Approach)
+    function addLang2(languageName){
+        const list = document.querySelector(".language");
+        let li = document.createElement("li")
+        li.innerHTML = `${languageName}`
+        list.appendChild(li)
+    }
+    //Problem with the above approach: List che adiche elements traverse karyla lagtey
+
+    //creating a function to create list elements (My Approach) (more optimised)
+    function addLang(languageName){
+        const list=document.querySelector(".language");
+        let li=document.createElement("li");
+        let node = document.createTextNode(languageName) // recommended approach 
+        li.appendChild(node)
+        list.appendChild(li)
+    }
+    // The above approach is an optimised approach because sagla tree traverse karycha garaj nahi(list 
+    // che adiche elements)
+
+    
+    addLang("C++")
+    addLang2("C#")
+    addLang2("Java")
+
+    //EDITING THE LIST-ITEMS 
+    // Before that we will learn how to select list items using references so that we need not have
+    // to traverse the entire tree
+    
+    //lets try to select 1st list item 
+    const firstElement=document.querySelector("li:first-child")
+    console.log(firstElement);
+    
+    //Lets try to select 2nd list item which is python
+    const secondElement= document.querySelector("li:nth-child(2)")//Here its like we are having a reference to 2nd child
+    console.log(secondElement);
+
+    //Lets try to select last list item which is Java
+    const lastItem = document.querySelector("li:last-child");
+    console.log(lastItem);
+
+    secondElement.innerHTML= "Golang" // Again more optimised solution exits (createTextNode wala)
+    const textNode=document.createTextNode("PHP")
+    const thisLi=document.createElement("li");
+    thisLi.appendChild(textNode);
+    secondElement.replaceWith(thisLi)
+
+
+    // Remove the element
+    lastelem=document.querySelector("li:last-child");
+    lastelem.remove()
+</script>
+</html>
