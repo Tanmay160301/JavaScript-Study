@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Start and Stop Printing</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    let kam=undefined;
+
+    const startIt = function(str){
+        console.log("My name is "+str+ " and the time is "+Date.now());
+    }
+
+    document.getElementById("start").addEventListener("click", function(e){
+        //startIt cha reference dila hota
+        kam = setInterval(startIt,2000,"Tanmay");
+    }, false);
+
+    document.getElementById("stop").addEventListener("click", function(e){
+        clearInterval(kam);
+    }, false);
+</script>
+
+</html>

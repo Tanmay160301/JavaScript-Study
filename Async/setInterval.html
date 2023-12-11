@@ -1,0 +1,45 @@
+<!-- 
+    Basic understanding from this code:
+    basic understanding and practically implemented the setInterval() and clearInterval() functions
+
+    simple project to understand this concept
+    After every defined interval the timestamp is printed onto the console
+    ek button pn dila ahe if being clicked clears the interval
+ -->    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>This is the tutorial to explore set Interval</h1>
+    <button id="stop">STOP</button>
+    
+</body>
+<script>
+
+    //One way to write setInterval function
+    // setInterval(() => {
+    //     console.log(Date.now());
+    // }, 2000);
+
+    //Another way of writting setInterval function is as follows (function cha reference send karycha)
+    // The third parameter is the argument which we will pass to the function
+    const kam = function(name){
+        console.log("Hello! my name is "+name+ "And the time is "+Date.now());
+
+    }
+
+    document.getElementById("stop").addEventListener("click",function(e){
+        //clearInterval()
+    clearInterval(cancelInterval);
+    },false);
+    
+    const cancelInterval = setInterval(kam,2000,"Tanmay");
+
+
+</script>
+</html>

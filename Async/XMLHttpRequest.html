@@ -1,0 +1,59 @@
+<!-- 
+    Basic expectation from this API Task :
+   -- To study and implement XMLHttpRequest Object and its readyState property
+   --object.readyState property
+   --object.responseText property
+   -- object.onreadyStateFunction function which acts an an event handler
+   --Practically implemented how to get values from API and print it in console
+   --I have also done another task of API_task2 which involves getting information from the api
+    and displaying some of it in the document body object
+
+    --got familiar with the v8 engine and how its code is written in C++
+    --saw the code of console.log
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    The readyState property can have different values:
+1.	0 (UNSENT): The XMLHttpRequest object has been created, but the open method has not been called yet.
+2.	1 (OPENED): The open method has been called, indicating that the request is ready to be configured. You can set the HTTP method (GET, POST, etc.) and the URL at this stage.
+3.	2 (HEADERS_RECEIVED): The send method has been called, and the request headers and status are now available. This state signifies that the server has been contacted, and its response headers are received.
+4.	3 (LOADING): The request is in progress. This state indicates that the response is being received. You can check the responseText property to see the current response.
+5.	4 (DONE): The request is complete, and the entire response, including the data, is received. You can check the status property to see the HTTP status code, and the responseText or responseXML property to get the actual data.
+
+</body>
+<script>
+    let myURL = "https://api.github.com/users/tanmay160301"
+    let object = new XMLHttpRequest();
+    //This is just used for configuring the properties of request object about what type of request are 
+    //you going to create
+   
+    object.open("GET",myURL); // ithe request object cha configuaration hotay
+
+
+    object.send();//ithe toh request object actually send kela jato
+
+        // This function is like an event which gets called as soon as the state of the object is changed
+        // Ithe aplyala thodkyat sangaycha ahe ki ek async task zala ki nemka kay karycha ahe
+        object.onreadystatechange = function(){
+        console.log(object.readyState);//Printing the current status of the ready state object
+        if (object.readyState === 4) {
+            let data =  JSON.parse(object.responseText);// response text string ahe so converting it into
+            //json object and then finally printing one of its property
+            console.log(data.id);
+        }
+    }
+    console.log(typeof object.responseText); 
+ 
+
+</script>
+</html>

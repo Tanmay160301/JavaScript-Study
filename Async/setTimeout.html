@@ -1,0 +1,51 @@
+<!-- 
+    basic understanding from this code:
+    The text will be displayed on the body ...eka particular interval nantr tya body cha text change
+    vhyala pahije ... and even ek button ahe which if i click then it prevents the change to occur
+
+    basic understanding about setTimeout() and clearTimeout() functions 
+    practically implemented setTimeout and clearTimeout() functions 
+    Ek button click kela ki clearTimeout() honar
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My name is <span id="name">Tanmay Anupam Bhurke</span> </h1>
+    <button id="stop">
+        STOP
+    </button>
+</body>
+<script>
+
+    const consoleName =  function(){
+        console.log("Tanmay Here!");
+    } 
+
+    const changeName = function(){
+        document.querySelector("#name").innerHTML = "Tannu Bal";
+    }
+
+    // using a STOP button to cancel the timeOut which was once created
+    // We can hold that function in a  variable
+    //setTimeout cha first argument madhe either tithlya titha function lihi nahitr reference de
+    // function cha 
+    const TO = setTimeout(changeName,2000);
+
+    document.getElementById("stop").addEventListener("click",function(e){
+        //hya function cha argument madhe tya setTimeout() function cha reference dila
+        clearTimeout(TO);
+    },false);
+
+    
+
+
+</script>
+</html>
